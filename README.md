@@ -19,4 +19,4 @@ Tasks:
 - [Using the fdisk utility](./report.md#part-10-using-the-fdisk-utility)
 - [Using the df utility](./report.md#part-11-using-the-df-utility)
 - [Using the du utility](./report.md#part-12-using-the-du-utility)
-- [Using the ncdu utility](./report.md#part-13-using-the-ncdu-utility)
+- [Installing and Using the ncdu utility](./report.md#part-13-installing-and-using-the-ncdu-utility)
