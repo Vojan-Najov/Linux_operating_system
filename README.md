@@ -11,3 +11,4 @@ Tasks:
 - [Creating a user](./report.md#part-2-creating-a-user)
 - [Setting up of the OS network](./report.md#part-3-setting-up-of-the-os-network)
 - [OS update](./report.md#part-4-os-update)
+- [Using-the-sudo-command](./report.md#part-5-using-the-sudo-command)
