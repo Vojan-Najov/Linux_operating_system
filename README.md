@@ -7,3 +7,4 @@ Linux system installation and updates. Administration basics.
 
 Tasks:
 - [Installation of the OS](./report.md#part-1-installation-og-the-os)
+- [Creating a user](./report.md#part-2-creating-a-user)
