@@ -63,3 +63,34 @@
 [VirtualBox User Manual](https://www.virtualbox.org/manual/UserManual.html) \
 [Basic installation tutorial](https://ubuntu.com/server/docs/installation) \
 [/etc/issue man-page](https://manpages.ubuntu.com/manpages/focal/en/man5/issue.5.html)
+
+## Part 2. Creating a user
+
+#### Cоздать нового пользователя и добавить его в группу adm.
+
+- Cоздать нового пользователя: \
+  <img src="./images/create_user_01.png" alt="create_user_01" width="700"/>
+  - Утилита `useradd` позволяет создать нового пользователя. \
+    Опция `-G` позволяет добавить пользователя в определенные группы. \
+    Oпция `-s` - назначить командную оболочку по умолчанию.\
+    Опция `-с` - добавить информацию о пользователе. \
+    Опция `-d` - назначить домашнюю директорию.
+  - С помощью утилиты `passwd` назначаем пароль для нового пользователя.
+  - C помощью утилиты `mkdir` создаем домашнюю директорию для нового пользователя.
+  - C помощью утилиты `chown` меняем владельца домашней директории на нового пользователя.
+  - C помощью утилиты `su` меняем пользователя. Переходим в домашний каталог. \
+    Используя утилиту `groups`, отображаем группы, в которых состоит новый пользователь. \
+    Члены группы adm имеют права для чтения журналов. Пробуем прочитать файл `/var/log/syslog`.
+- Файл `/etc/passwd` содержит информацию о всех пользовательских аккаунтах.
+  <img src="./images/create_user_02.png" alt="create_user_02" width="700"/>
+- Строка, содержащая информацию о новом пользователе. \
+  <img src="./images/create_user_03.png" alt="create_user_03" width="700"/>
+
+[Ubuntu user management](https://ubuntu.com/server/docs/security-users) \
+[useradd man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/useradd.8.html) \
+[passwd man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/passwd.1.html) \
+[mkdir man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/mkdir.1.html) \
+[chown man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/chown.1.html) \
+[su man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/su.1.html) \
+[groups man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/groups.1.html) \
+[/etc/passwd man-page](https://manpages.ubuntu.com/manpages/focal/en/man5/passwd.5.html)
