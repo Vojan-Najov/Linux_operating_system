@@ -69,7 +69,7 @@
 #### Cоздать нового пользователя и добавить его в группу adm.
 
 - Cоздать нового пользователя: \
-  <img src="./images/create_user_01.png" alt="create_user_01" width="700"/>
+  <img src="./misc/images/create_user_01.png" alt="create_user_01" width="700"/>
   - Утилита `useradd` позволяет создать нового пользователя. \
     Опция `-G` позволяет добавить пользователя в определенные группы. \
     Oпция `-s` - назначить командную оболочку по умолчанию.\
@@ -82,9 +82,9 @@
     Используя утилиту `groups`, отображаем группы, в которых состоит новый пользователь. \
     Члены группы adm имеют права для чтения журналов. Пробуем прочитать файл `/var/log/syslog`.
 - Файл `/etc/passwd` содержит информацию о всех пользовательских аккаунтах.
-  <img src="./images/create_user_02.png" alt="create_user_02" width="700"/>
+  <img src="./misc/images/create_user_02.png" alt="create_user_02" width="700"/>
 - Строка, содержащая информацию о новом пользователе. \
-  <img src="./images/create_user_03.png" alt="create_user_03" width="700"/>
+  <img src="./misc/images/create_user_03.png" alt="create_user_03" width="700"/>
 
 [Ubuntu user management](https://ubuntu.com/server/docs/security-users) \
 [useradd man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/useradd.8.html) \
