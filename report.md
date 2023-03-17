@@ -180,3 +180,26 @@
 [netplan ip server man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/netplan.8.html) \
 [ping man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/ping.1.html) \
 [uptime man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/uptime.1.html)
+
+## Part 4. OS Update
+
+#### Обновить системные пакеты до последней версии.
+
+- Обновить индекс пакетов. \
+  Индекс пакетов APT - это, по сути, база данных доступных пакетов из репозиториев, \
+  определенных в файле `/etc/apt/sources.list` и в каталоге `/etc/apt/sources.list.d`. \
+  Чтобы обновить индекс локальных пакетов с учетом последних изменений, внесенных в репозитории, \
+  используем команду `$>sudo apt update`: \
+  <img src="./misc/images/os_update_01.png" alt="os_update_01" width="700"/>
+- Обноваить пакеты. \
+  Установленные на компьютере пакеты могут периодически обновляться из репозиториев пакетов \
+  (например, обновления для системы безопасности). Чтобы обновить нашу систему, сначала обновим \
+  индекс локальных пакетов с помощью `sudo apt update`, а затем сами пакеты с помощью команды 
+  `$>sudo apt upgrade`: \
+  <img src="./misc/images/os_update_02.png" alt="os_update_01" width="700"/>
+- `$>sudo apt upgrade` - в последней строке сообщается, что обновлений нет: \
+  <img src="./misc/images/os_update_03.png" alt="os_update_03" width="700"/>
+
+[ubuntu package management](https://ubuntu.com/server/docs/package-management) \
+[apt man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/apt.8.html)
+
