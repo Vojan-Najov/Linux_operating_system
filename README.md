@@ -17,3 +17,4 @@ Tasks:
 - [Installing and basic setup of the SSHD service](./report.md#part-8-installing-and-basic-setup-of-the-sshd-service)
 - [Installing and using the top, htop utilities](./report.md#part-9-installing-and-using-the-top-htop-utilities)
 - [Using the fdisk utility](./report.md#part-10-using-the-fdisk-utility)
+- [Using the df utility](./report.md#part-11-using-the-df-utility)
