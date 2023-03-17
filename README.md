@@ -7,6 +7,6 @@ Linux system installation and updates. Administration basics.
 - [Report RUS](./report.md)
 
 Tasks:
-- [Installation of the OS](./report.md#part-1-installation-og-the-os)
+- [Installation of the OS](./report.md#part-1-installation-of-the-os)
 - [Creating a user](./report.md#part-2-creating-a-user)
-- [Settings up of the OS network](./report.md#part-3-settings-up-of-the-os-network)
+- [Setting up of the OS network](./report.md#part-3-setting-up-of-the-os-network)
