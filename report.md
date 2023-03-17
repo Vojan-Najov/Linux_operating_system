@@ -571,3 +571,23 @@
     <img src="./misc/images/du05.png" alt="du05" width="500"/>
 
 [du man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/du.1.html)
+
+## Part 13. Installing and using the ncdu utility
+
+ncdu - это команда, имеющая то же назначение, что и du, но обладающая приятным и удобным интерфейсом.
+
+#### Установить утилиту ncdu.
+
+- `$>sudo apt install ncdu`: \
+  <img src="./misc/images/ncdu01.png" alt="ncdu01" width="700"/>
+
+#### Вывести размер папок /home, /var, /var/log.
+
+- `$>ncdu /home`: \
+  <img src="./misc/images/ncdu02.png" alt="ncdu02" width="700"/>
+- `$>sudo ncdu /var`: \
+  <img src="./misc/images/ncdu03.png" alt="ncdu03" width="700"/>
+- `$>sudo ncdu /var/log`: \
+  <img src="./misc/images/ncdu04.png" alt="ncdu04" width="700"/>
+
+[ncdu man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/ncdu.1.html)
