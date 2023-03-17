@@ -23,42 +23,42 @@
 #### Установить Ubuntu 20.04 Server LTS без графического интерфейса. (Используем программу для виртуализации - VirtualBox)
 
 - Загрузка образа операционной системы ubuntu-20.04 LTS и проверка чек-суммы. \
-  <img src="./images/check_shasum.png" alt="check_shasum" width="700"/>
+  <img src="./misc/images/check_shasum.png" alt="check_shasum" width="700"/>
 
 - Конфигурация новой виртуальной машины в Oracle VM VirtualBox:
   - Создание новой виртуальной машины в Oracle VM VirtualBox \
-    <img src="./images/vm_configure_1.png" alt="vm_configure_1" width="500"/>
+    <img src="./misc/images/vm_configure_1.png" alt="vm_configure_1" width="500"/>
   - Настройка аппаратного обеспечения виртуальной машины \
-    <img src="./images/vm_configure_2.png" alt="vm_configure_2" width="500"/>
+    <img src="./misc/images/vm_configure_2.png" alt="vm_configure_2" width="500"/>
   - Создание виртуального жесткого диска \
-    <img src="./images/vm_configure_3.png" alt="vm_configure_3" width="500"/>
+    <img src="./misc/images/vm_configure_3.png" alt="vm_configure_3" width="500"/>
   - Итоговые настройки виртуальной машины \
-    <img src="./images/vm_configure_4.png" alt="vm_configure_4" width="500"/>
+    <img src="./misc/images/vm_configure_4.png" alt="vm_configure_4" width="500"/>
 - Установка операционной системы на виртуальную машину:
   - Выбор языка \
-    <img src="./images/install_01.png" alt="install_01" width="500"/>
+    <img src="./misc/images/install_01.png" alt="install_01" width="500"/>
   - Выбор расскладки клавиатуры \
-    <img src="./images/install_02.png" alt="install_02" width="500"/>
+    <img src="./misc/images/install_02.png" alt="install_02" width="500"/>
   - Настройка сетевого интерфейса (по умолчанию) \
-    <img src="./images/install_03.png" alt="install_03" width="500"/>
+    <img src="./misc/images/install_03.png" alt="install_03" width="500"/>
   - Настройка прокси (по умолчанию) \
-    <img src="./images/install_04.png" alt="install_04" width="500"/>
+    <img src="./misc/images/install_04.png" alt="install_04" width="500"/>
   - Выбор зеркала архива Ubuntu (по умолчанию) \
-    <img src="./images/install_05.png" alt="install_05" width="500"/>
+    <img src="./misc/images/install_05.png" alt="install_05" width="500"/>
   - Разбиение жесткого диска (по умолчанию) \
-    <img src="./images/install_06.png" alt="install_06" width="500"/>
+    <img src="./misc/images/install_06.png" alt="install_06" width="500"/>
   - Результат разиения жесткого диска \
-    <img src="./images/install_07.png" alt="install_07" width="500"/>
+    <img src="./misc/images/install_07.png" alt="install_07" width="500"/>
   - Настройки профиля (имя пользователя, название машины, задание пароля) \
-    <img src="./images/install_08.png" alt="install_08" width="500"/>
+    <img src="./misc/images/install_08.png" alt="install_08" width="500"/>
   - Установка ssh (по умолчнию нет) \
-    <img src="./images/install_09.png" alt="install_09" width="500"/>
+    <img src="./misc/images/install_09.png" alt="install_09" width="500"/>
   - Установка дополнительных snap пакетов (по умолчанию нет) \
-    <img src="./images/install_10.png" alt="install_10" width="500"/>
+    <img src="./misc/images/install_10.png" alt="install_10" width="500"/>
   - Установка завершена \
-    <img src="./images/install_11.png" alt="install_11" width="500"/>
+    <img src="./misc/images/install_11.png" alt="install_11" width="500"/>
 - Версия установенной операционной системы \
-  <img src="./images/os_version.png" alt="os_version" width="700"/> \
+  <img src="./misc/images/os_version.png" alt="os_version" width="700"/> \
   `/etc/issue` это текстовый файл, в котором содержится сообщение о индитификаторе системы.
 
 [VirtualBox User Manual](https://www.virtualbox.org/manual/UserManual.html) \
