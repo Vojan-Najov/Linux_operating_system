@@ -203,3 +203,26 @@
 [ubuntu package management](https://ubuntu.com/server/docs/package-management) \
 [apt man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/apt.8.html)
 
+## Part 5. Using the sudo command
+
+#### Разрешить новому пользователю выполнять команду sudo.
+
+*sudo (substitute user and do, дословно «подменить пользователя и выполнить») — программа для системного администрирования UNIX-систем, позволяющая делегировать те или иные привилегированные ресурсы пользователям с ведением протокола работы.*
+*Программа sudo настраивается через файл /etc/sudoers.*
+*В Debian-based-дистрибутивах пользователь root не имеет пароля, вместо этого все административные действия должны производиться через sudo.*
+
+- Перключаемся на нового пользователя и пробуем изменить имя хоста. Ошибка.
+- Возвращаемся к старому пользователю и добавляем нового в группу sudo с помощью команды `usermod`, \
+  опция `-a` добавляет изменения к существующим настройкам,
+  опция `-G` позволяет добавить пользователя в существующую группу.
+- Пробуем снова изменить имя машины от лица нового пользователя. Теперь все получилось.
+- Существует файл `/etc/sudoers`, в котором можно задать огромное количество настроек для \
+  команды `sudo`. Этот файл редактируется с помощью утилиты `visudo`, которая проверяет \
+  корректность синтаксиса конфирурационного файла `/etc/sudoers`.
+  <img src="./misc/images/sudo.png" alt="sudo" width="700"/>
+
+[usermod man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/usermod.8.html) \
+[sudo man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/sudo.8.html) \
+[/etc/sudoers man-page](https://manpages.ubuntu.com/manpages/focal/en/man5/sudoers.5.html) \
+[visudo man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/visudo.8.html)
+
