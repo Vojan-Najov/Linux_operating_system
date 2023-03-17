@@ -506,3 +506,35 @@
 
 [fdisk man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/fdisk.8.html) \
 [swapon man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/swapon.8.html)
+
+## Part 11. Using the df utility
+
+#### Запустить утилиту df.
+
+- `$>df`: \
+  <img src="./misc/images/df01.png" alt="df01" width="700"/>
+- `$>df /`: \
+  <img src="./misc/images/df02.png" alt="df02" width="700"/> \
+  - **размер раздела:** 6352332
+  - **размер занятого пространства:** 4063048
+  - **размер свободного пространства:** 1945428
+  - **процент использования:** 68
+- Единица измерения по умолчанию это количество кибибайтных (1024 байта) блоков. \
+  <img src="./misc/images/df03.png" alt="df03" width="700"/>
+
+#### Запустить утилиту df с опциями T и h.
+
+- `$>df -Th`: \
+  <img src="./misc/images/df04.png" alt="df04" width="700"/> \
+  - опция T добавляет к выводу тип файловой системы.
+  - опция h форматирует вывод размеров в степенях по основанию 1024.
+- `$>df -Th /`: \
+  <img src="./misc/images/df05.png" alt="df05" width="700"/> \
+  - **размер раздела:** 1.6 GiB
+  - **размер занятого пространства:** 3.9 GiB
+  - **размер свободного пространства:** 1.9 GiB
+  - **процент использования:** 68
+ - **Tип файловой системы** ext4 -  журналируемая файловая система, \
+   используемая преимущественно в операционных системах с ядром Linux.
+
+[df man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/df.1.html)
