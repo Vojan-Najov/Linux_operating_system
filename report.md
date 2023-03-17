@@ -486,3 +486,23 @@
 [top man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/top.1.html) \
 [htop man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/htop.1.html)
 
+## Part 10. Using the fdisk utility
+
+#### Запустить утилиту fdisk.
+
+- `$>sudo fdislk -l` (опция -l выводит список всех определенных устройств): \
+  <img src="./misc/images/fdisk01.png" alt="fdisk01" width="700"/>
+- в системе определился только один жесткий диск /dev/sda. \
+  команда `$>sudo fdisk -l /dev/sda` выведет информацию об этом устройстве: \
+  <img src="./misc/images/fdisk02.png" alt="fdisk02" width="700"/>
+  - **название:** sda
+  - **размер:** 8 GiB
+  - **количество секторов:** 16777216
+- при установке на этапе разметки диска раздел swap не монтировался отдельно. \
+  Поэтому с помощью утилиты fdisk не получится узнать его размер. \
+  Mожно воспользоваться командой `$>swapon --show`: \
+  <img src="./misc/images/fdisk03.png" alt="fdisk03" width="700"/>
+  - **размер swap:** 997 MiB
+
+[fdisk man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/fdisk.8.html) \
+[swapon man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/swapon.8.html)
