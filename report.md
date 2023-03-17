@@ -94,3 +94,89 @@
 [su man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/su.1.html) \
 [groups man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/groups.1.html) \
 [/etc/passwd man-page](https://manpages.ubuntu.com/manpages/focal/en/man5/passwd.5.html)
+
+## Part 3. Setting up of the OS network
+
+#### Задать имя машины.
+
+- Имя хоста содержится в файле /etc/hostname \
+  Чтобы изменить его, можно возмользоваться утилитой `hostnamectl set-hostname`: \
+  <img src="./misc/images/hostname_01.png" alt="hostname_01" width="700"/> \
+  Также изменим имя хоста в файле `/etc/hosts`: \
+  <img src="./misc/images/hostname_02.png" alt="hostname_02" width="700"/>
+
+#### Установить временную зону.
+- Для настройки системных часов, используем утилиту `timedatectl`. \
+  Чтобы узнать текущие настройки, используем команду `timedatectl status`. \
+  Список доступных временных зон, получаем с помощью команды `timedatectl list-timezones`. \
+  Чтобы изменить временную зону, используем команду `timedatectl set-timezone`. \
+  <img src="./misc/images/timezone.png" alt="timezone" width="700"/>
+
+#### Вывести список сетевых интерфейсов.
+
+- Чтобы определить все доступные сетевые интерфейсы, можно использовать команду ip link list. \
+  Всего есть два сетевых интерфейса, первый - виртуальный, второй - ethernet. \
+  lo (loopback device) – виртуальный интерфейс, присутствующий по умолчанию в любом Linux. \
+  Он используется для отладки сетевых программ и запуска серверных приложений на локальной машине. \
+  С этим интерфейсом всегда связан адрес 127.0.0.1. У него есть dns-имя – localhost. \
+  Посмотреть привязку можно в файле `/etc/hosts`. \
+  <img src="./misc/images/list_network_interfaces.png" alt="interfaces" width="700"/>
+
+#### Получить ip адрес устройства от DHCP сервера.
+
+- DHCP (англ. Dynamic Host Configuration Protocol — протокол динамической настройки узла) — \
+  сетевой протокол, позволяющий сетевым устройствам автоматически получать IP-адрес и \
+  другие параметры, необходимые для работы в сети TCP/IP.
+- Данный протокол работает по модели «клиент-сервер». Для автоматической конфигурации \
+  компьютер-клиент на этапе конфигурации сетевого устройства обращается к так называемому серверу \
+  DHCP и получает от него нужные параметры. Протокол DHCP используется в большинстве сетей TCP/IP.
+- Чтобы узнать ip адрес сетевого интерфейса, можно воспользоваться командой `ip address show`.
+- Чтобы сбросить ip адрес на сетевом интерфейсе, используем команду `dhclient -r`.
+- И для того, чтобы получить ip адрес для сетевого интерфейса, используем команду `dhclient -v`. \
+  <img src="./misc/images/ip_address.png" alt="ip_adress" width="700"/>
+
+#### Определить внешний и внутренний ip-адреса шлюза.
+
+- Чтобы узнать внешний ip адрес, можно запросить от внешнего сервера ip адрес, \
+  с которого к нему пришел запрос, например ipecho.
+- Чтобы знать внутрений ip адрес шлюза, можно воспользоваться командой `ip route list`. \
+  Он выведется в строке, начинающейся с default via (путь по умолчанию). \
+  <img src="./misc/images/gateway_ip.png" alt="gateway_ip" width="700"/>
+
+#### Задать статичные настройки ip, gw, dns.
+
+- Чтобы задать статичные ip, gw, dns адреса нужно описать конфигурационный файл для `netplan` в директории `/etc/netplan/` с расширением `yaml`: \
+  <img src="./misc/images/static_ip_01.png" alt="static`_ip_01" width="700">
+  - Имя сетевого интерфейса enp0s3.
+  - Отклоняем настройки от dhcp сервера.
+  - Адрес для шлюза оставляем, как и был.
+  - Присваиваем сетевому интерфейсу адрес в этой же подсети, что и для шлюза.
+  - Добавляем адреса для dns серверов.
+- Удаляем конфигурационный файл, созданный системой.
+- Нужно применить настройки командой `netplan apply`.
+- Проверяем адреса интефейса и шлюза. Они соответствуют заданным в конфигурационном файле. \
+  <img src="./misc/images/static_ip_02.png" alt="static_ip_02" width="700"/>
+
+#### Перезагрузить виртуальную машину. Убедиться, что статичные сетевые настройки сохранились.
+
+- Перезагружаем систему.
+- Проверяем адреса интефейса и шлюза. \
+  Они соответствуют заданным в конфигурационном файле `/etc/netplan/config.yaml`.
+- С помощью утилиты `ping` пробуем отправить пакеты на 1.1.1.1 и ya.ru. Потерь нет. \
+  <img src="./misc/images/static_ip_03.png" alt="static_ip_03" width="700"/>
+
+[/etc/hosts man-page](https://manpages.ubuntu.com/manpages/focal/en/man5/hosts.5.html) \
+[/etc/hostname man-page](https://manpages.ubuntu.com/manpages/focal/en/man5/hostname.5.html) \
+[hostname man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/hostname.1.html) \
+[hostnamectl man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/hostnamectl.1.html) \
+[timedatectl man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/timedatectl.1.html) \
+[ip man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/ip.8.html) \
+[dhclient man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/dhclient.8.html) \
+[curl man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/curl.1.html) \
+[ubuntu network introduction](https://ubuntu.com/server/docs/network-introduction) \
+[netplan web site](https://netplan.io/) \
+[netplan documentation](https://netplan.readthedocs.io/en/stable/) \
+[netplan man-page](https://manpages.ubuntu.com/manpages/focal/man5/netplan.5.html) \
+[netplan ip server man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/netplan.8.html) \
+[ping man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/ping.1.html) \
+[uptime man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/uptime.1.html)
