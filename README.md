@@ -18,4 +18,4 @@ Tasks:
 - [Installing and using the top, htop utilities](./report.md#part-9-installing-and-using-the-top-htop-utilities)
 - [Using the fdisk utility](./report.md#part-10-using-the-fdisk-utility)
 - [Using the df utility](./report.md#part-11-using-the-df-utility)
-- [Using the du utility](./report.md#part-11-using-the-du-utility)
+- [Using the du utility](./report.md#part-12-using-the-du-utility)
