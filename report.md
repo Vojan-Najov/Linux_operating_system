@@ -232,7 +232,7 @@
 
 *Network Time Protocol (NTP) - это сетевой протокол для синхронизации времени по сети. По сути, клиент запрашивает текущее время у сервера и использует его для установки своих собственных часов.*
 
-*По умолчанию Ubuntu использует timedatectl/ timesyncd для синхронизации времени, и пользователи могут дополнительно использовать chrony для обслуживания протокола сетевого времени.*
+*По умолчанию Ubuntu использует timedatectl/timesyncd для синхронизации времени, и пользователи могут дополнительно использовать chrony для обслуживания протокола сетевого времени.*
 
 - Вывести время, часового пояса, в котором вы сейчас находитесь. \
   Команда `$>date` выводит время установленного часового пояса:
@@ -267,4 +267,80 @@
 [chronyd man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/chronyd.8.html) \
 [chronyc man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/chronyc.1.html) \
 [chrony.conf man-page](https://manpages.ubuntu.com/manpages/focal/en/man5/chrony.conf.5.html)
+
+## Part 7. Installing and using text editors
+
+#### Установить текстовые редакторы.
+
+- Редактор vim установлен в системе по умолчанию: \
+  <img src="./misc/images/editors_01.png" alt="editors_01" width="700"/>
+- Редактор nano установлен в системе по умолчанию: \
+  <img src="./misc/images/editors_02.png" alt="editors_02" width="700"/>
+- Редактор emacs установим командой `$>sudo apt install emacs`: \
+  <img src="./misc/images/editors_03.png" alt="editors_03" width="700"/>
+
+#### Создать и сохранить с измениями файлы с помощью редакторов.
+
+- Редактор vim. \
+  `$>vim test_vim.txt`:\
+  Команда `i` - режим редактирования \
+  `ESC` выход из режима редактирования в режим команд \
+  `:wq` - выход из редактора с сохранением изменений \
+  <img src="./misc/images/editors_04.png" alt="editors_04" width="700"/>
+- Редактор nano. \
+  `$>nano test_nano.txt`: \
+  `Ctrl^X` для выхода из редактора. Для сохранения изменений нажимаем - `y`: \
+  <img src="./misc/images/editors_05.png" alt="editors_05" width="700"/>
+- Редактор emacs. \
+  `emacs test_emacs.txt`: \
+  `Ctrl^X Ctrl^C` для выхода из редактора. Для сохранения изменений нажимаем - `y`: \
+  <img src="./misc/images/editors_06.png" alt="editors_06" width="700"/>
+
+#### Открыть файл на редактирование, редактировать и выйти без сохранения изменений.
+
+- Редактор vim. \
+  `$>vim test_vim.txt`: \
+  Команда `dd` - удалить строчку \
+  Команда `i` - режим редактирования \
+  `ESC` выход из режима редактирования в режим команд \
+  `:q!` - выход из редактора без сохранения изменений: \
+  <img src="./misc/images/editors_07.png" alt="editors_07" width="700"/>
+- Редактор nano.
+  `$>nano test_nano.txt`: \
+  `Ctrl^X` для выхода из редактора. Для отказа от сохранения изменений нажимаем - `n`:
+  <img src="./misc/images/editors_08.png" alt="editors_08" width="700"/>
+- Редактор emacs. \
+  `$>emacs test_emacs.txt`: \
+  `Ctrl^X Ctrl^C` для выхода из редактора. Далее `q` и `yes` \
+  <img src="./misc/images/editors_09.png" alt="editors_09" width="700"/>
+
+#### Реактирование, поиск и замена по содержимому файла.
+
+- Редактор vim. \ 
+  `$>vim test_vim.txt`: \
+  `ESC` - режим команд и `/school` для поиска по содержимому. \
+  Для перемещения по списку найденных совпадений использовать `n` и `N` в режиме команд: \
+  <img src="./misc/images/editors_10.png" alt="editors_10" width="700"/> \
+  `ESC` и `:%s/21/42/g` - глобальная замена 21 на 42: \
+  <img src="./misc/images/editors_11.png" alt="editors_11" width="700"/>
+- Редактор nano. \
+  `$>nano test_nano.txt`: \
+  `Ctrl^W` для поиска по содержимому. Далее просто вводим искомое содержимое и нажимаем `Enter` \
+  Для перемещения по списку найденных совпадений `Cntl-W` и `enter` \
+  <img src="./misc/images/editors_12.png" alt="editors_12" width="700"/> \
+  `Ctrl^\` для замены содержимомого. \
+  Далее вводим искомое, например 21, `enter`, вводим на что заменить, например 42, `enter` \
+  и выбираем какое вхождение заменить, например все - A \
+  <img src="./misc/images/editors_13.png" alt="editors_13" width="700"/>
+- Редактор emacs. \
+  `$>emacs test_emacs.txt`: \
+  `Ctrl^S` для поиска содержимого \
+  <img src="./misc/images/editors_14.png" alt="editors_14" width="700"/> \
+  Для замены содержимого ввести `M-X (alt^X) replace-string` \
+  Затем `enter`, затем что меняем, например 21, `enter`, затем на что меняем, например 42, `enter` \
+  <img src="./misc/images/editors_15.png" alt="editors_15" width="700"/>
+
+[vim man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/vim.1.html) \
+[nano man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/nano.1.html) \
+[emacs manual](https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html)
 
