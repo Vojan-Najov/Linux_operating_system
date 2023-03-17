@@ -24,7 +24,6 @@
 
 - Загрузка образа операционной системы ubuntu-20.04 LTS и проверка чек-суммы. \
   <img src="./misc/images/check_shasum.png" alt="check_shasum" width="700"/>
-
 - Конфигурация новой виртуальной машины в Oracle VM VirtualBox:
   - Создание новой виртуальной машины в Oracle VM VirtualBox \
     <img src="./misc/images/vm_configure_1.png" alt="vm_configure_1" width="500"/>
