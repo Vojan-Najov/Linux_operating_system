@@ -13,3 +13,4 @@ Tasks:
 - [OS update](./report.md#part-4-os-update)
 - [Using the sudo command](./report.md#part-5-using-the-sudo-command)
 - [Installing and configuring the time service](./report.md#part-6-installing-and-configuring-the-time-service)
+- [Installing and using text editors](./report.md#part-7-installing-and-using-text-editors)
