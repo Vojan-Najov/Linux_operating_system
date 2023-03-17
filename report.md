@@ -226,3 +226,45 @@
 [/etc/sudoers man-page](https://manpages.ubuntu.com/manpages/focal/en/man5/sudoers.5.html) \
 [visudo man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/visudo.8.html)
 
+## Part 6. Installing and configuring the time service 
+
+#### Настроить службу автоматической синхронизации времени.
+
+*Network Time Protocol (NTP) - это сетевой протокол для синхронизации времени по сети. По сути, клиент запрашивает текущее время у сервера и использует его для установки своих собственных часов.*
+
+*По умолчанию Ubuntu использует timedatectl/ timesyncd для синхронизации времени, и пользователи могут дополнительно использовать chrony для обслуживания протокола сетевого времени.*
+
+- Вывести время, часового пояса, в котором вы сейчас находитесь. \
+  Команда `$>date` выводит время установленного часового пояса:
+  <img src="./misc/images/time_01.png" alt="time_01" width="700"/>
+- Текущее состояние времени и настройки времени  timedatectl и timesyncd \
+  можно проверить с помощью команд `timedatectl status` и `timedatectl timesync-status`: \
+  <img src="./misc/images/time_02.png" alt="time_02" width="700"/>
+
+- Настройка chrony для синхронизации времени:
+  - Cначала отключим синхронизацию времени командой `timedatectl set-ntp false`. \
+    <img src="./misc/images/time_03.png" alt="time_03" width="500"/>
+  - Установим сервис chrony командой `$>sudo apt install chrony`. \
+    Пакет `systemd-timesync` будет удален. \
+   `chronyd` - фактический демон для синхронизации с сервером по протоколу сетевого времени. \
+   `chronyc` - интерфейс командной строки для демона chrony: \
+    <img src="./misc/images/time_04.png" alt="time_04" width="500"/>
+  - Для конфигурирования службы chrony есть конфигурационный файл `/etc/chrony/chrony.conf`: \
+    <img src="./misc/images/time_05.png" alt="time_05" width="500"/>
+  - Перазапустим сервис chrony. И проверим статус timedatectl: \
+    <img src="./misc/images/time_06.png" alt="time_06" width="500"/>
+
+*Вы можете установить chrony и настроить специальное оборудование для локальной синхронизации. Но если вы хотите предоставлять NTP сервис, вам нужно адаптировать свою конфигурацию.*
+
+*Чтобы включить обслуживание NTP, вам нужно, по крайней мере, установить правило allow. Это определяет, каким клиентам/сетям вы хотите, чтобы chrony обслуживал NTP.*
+
+*Примером может быть: allow 10.0.2.0*
+
+[date man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/date.1.html) \
+[ubuntu time synchronization](https://ubuntu.com/server/docs/network-ntp) \
+[timedatectl man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/timedatectl.1.html) \
+[timesyncd.conf man-page](https://manpages.ubuntu.com/manpages/focal/en/man5/timesyncd.conf.5.html) \
+[chronyd man-page](https://manpages.ubuntu.com/manpages/focal/en/man8/chronyd.8.html) \
+[chronyc man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/chronyc.1.html) \
+[chrony.conf man-page](https://manpages.ubuntu.com/manpages/focal/en/man5/chrony.conf.5.html)
+
