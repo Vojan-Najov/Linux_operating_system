@@ -538,3 +538,36 @@
    используемая преимущественно в операционных системах с ядром Linux.
 
 [df man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/df.1.html)
+
+## Part 12. Using the du utility
+
+**du** - это команда для получения приблизительного объема дискового пространства, используемого указанными при вызове команды файлами или каталогами.
+По умолчанию размер выводится в kибибайтах. Для того чтобы размер выводился в более читабельном виде используйте опцию -h. Опция --block-size позволяет задавать размер выводимых блоков. Опция -и эквивалентна --block-size=1. Опция -s выводит только итоговый размер для каждого аргумента.
+
+#### Запустить команду du.
+
+- `$>du`: \
+  <img src="./misc/images/du01.png" alt="du01" width="700"/>
+
+#### Вывести размер дирректорий /home, /var, /var/log (в байтах, в человекочитаемом виде).
+
+- **/home:**
+  - `$>du -b -s /home`:
+  - `$>du -h -s /home`: \
+    <img src="./misc/images/du02.png" alt="du02" width="500"/>
+- **/var:**
+  - `$>sudo du -b -s /var`:
+  - `$>sudo du -h -s /var`: \
+    <img src="./misc/images/du03.png" alt="du03" width="500"/>
+- **/var/log:**
+  - `$>sudo du -b -s /var/log`:
+  - `$>sudo du -h -s /var/log`: \
+    <img src="./misc/images/du04.png" alt="du04" width="500"/>
+
+#### Вывести размер всего содержимого в /var/log (не общее, а каждого вложенного элемента, используя *)
+
+- **/var/log/**\*:
+  - `$>sudo du /var/log/*`: \
+    <img src="./misc/images/du05.png" alt="du05" width="500"/>
+
+[du man-page](https://manpages.ubuntu.com/manpages/focal/en/man1/du.1.html)
