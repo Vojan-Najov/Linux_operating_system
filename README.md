@@ -21,3 +21,4 @@ Tasks:
 - [Using the du utility](./report.md#part-12-using-the-du-utility)
 - [Installing and using the ncdu utility](./report.md#part-13-installing-and-using-the-ncdu-utility)
 - [Working with system logs](./report.md#part-14-working-with-system-logs)
+- [Using the CRON job scheduler](./report.md#part-15-using-the-cron-job-scheduler)
